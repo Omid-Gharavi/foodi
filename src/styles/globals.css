@@ -5,6 +5,8 @@
 
 body{
   font-family: 'Poppins', sans-serif;
+  position: relative;
+  height: 600vh;
 }
 
 :root {
@@ -41,4 +43,23 @@ body {
 
 .link:hover .arrow{
   transform: rotate(180deg);
+}
+
+.menu{
+  visibility: hidden;
+  opacity: 0;
+  top: 110%;
+  transform: translateY(30px);
+  transition: .5s ease;
+}
+
+.dropdown:hover .menu{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testBg{
+  background: rgba(0, 0, 0, 0.5);
+  transition: .3s ease;
 }
