@@ -25,10 +25,10 @@ const Header = () => {
                 <div className='pt-10 fixed top-0 left-0 right-0 xl:px-[154px] px-4 flex items-center justify-between mx-auto bg-white'>
                     <Image src={Logo} alt='Logo' />
                     <ul className='flex gap-[60px] text-[20px] max-[1054px]:hidden'>
-                        <li>
+                        <li className='py-4'>
                             <Link href={'/'} className={router.pathname === '/' ? 'text-[#39DB4A]' : ''}>Home</Link>
                         </li>
-                        <li className='flex gap-[13px] link relative dropdown'>
+                        <li className='flex py-4 gap-[13px] link relative dropdown'>
                             Menu
                             <Image className='arrow' src={Arrow} alt='arrow' />
                             <div className='absolute w-40 shadow-xl left-0 rounded-lg menu overflow-hidden'>
@@ -41,7 +41,7 @@ const Header = () => {
                                 </ul>
                             </div>
                         </li>
-                        <li className='flex gap-[13px] link relative dropdown'>
+                        <li className='flex py-4 gap-[13px] link relative dropdown'>
                             Services
                             <Image className='arrow' src={Arrow} alt='arrow' />
                             <div className='absolute w-40 shadow-xl left-0 rounded-lg menu overflow-hidden'>
@@ -52,7 +52,7 @@ const Header = () => {
                                 </ul>
                             </div>
                         </li>
-                        <li>
+                        <li className='py-4'>
                             <Link href={'/offers'} className={router.pathname === '/offers' ? 'text-[#39DB4A]' : ''}>Offers</Link>
                         </li>
                     </ul>
@@ -66,7 +66,7 @@ const Header = () => {
                             <Image src={Contact} alt='Contact' />
                             Contact
                         </div>
-                        <div className='flex flex-col gap-1 ml-6 lg:hidden' onClick={() => setToggle(!toggle)}>
+                        <div className='flex flex-col gap-1 ml-6 lg:hidden' onClick={() => setToggle(!toggle)} aria-label='Menu'>
                             <div className='bg-slate-950 w-6 h-1 rounded-lg'></div>
                             <div className='bg-slate-950 w-6 h-1 rounded-lg'></div>
                             <div className='bg-slate-950 w-6 h-1 rounded-lg'></div>
