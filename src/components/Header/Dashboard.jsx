@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { dash } from './Header'
 import Image from 'next/image'
 import Logo from '@/assets/images/Logo.svg'
@@ -11,14 +11,21 @@ const Dashboard = () => {
         <div className={`lg:hidden z-30 transition ease-in-out duration-[0.5s] fixed w-52 top-0 left-0 h-screen px-4 pt-10 bg-white shadow-md ${!Dashboard ? 'translate-x-[-208px]' : 'translate-x-0'}`}>
             <Image src={Logo} />
             <div className='mt-6'>
-                <Lists menu={menu} setMenu={setMenu} name={'Menu'} index={0} />
-                <Lists menu={menu} setMenu={setMenu} name={'Services'} />
+                <Lists menu={menu} setMenu={setMenu} name={'Menu'} index={0} Dashboard={Dashboard} />
+                {/* <Lists menu={menu} setMenu={setMenu} name={'Services'} Dashboard={Dashboard} /> */}
             </div>
         </div >
     )
 }
 
-const Lists = ({ menu, setMenu, name, index, test = [] }) => {
+const Lists = ({ menu, setMenu, name, index, Dashboard }) => {
+    useEffect(() => {
+        if (Dashboard === false) {
+            setMenu(false)
+        }
+        console.log(Dashboard)
+    }, [Dashboard])
+
     return (
         <>
             <div className={`${index !== 0 && 'mt-4'} mb-3`}>
