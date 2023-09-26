@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import Logo from '@/assets/images/Logo.svg'
 import Search from '@/assets/images/search.svg'
 import Product from '@/assets/images/product.svg'
@@ -15,6 +15,17 @@ const Header = () => {
     const router = useRouter()
 
     const [toggle, setToggle] = useState(false);
+
+    useEffect(() => {
+        // Load the initial menu toggle state from cache
+        const cachedToggleState = localStorage.getItem('toggleState');
+        setToggle(cachedToggleState === 'true');
+    }, []);
+
+    useEffect(() => {
+        // Update the cache whenever the menu toggle state changes
+        localStorage.setItem('toggleState', toggle.toString());
+    }, [toggle]);
 
     const navLists = ['pl-5', 'hover:bg-[#39DB4A]', 'hover:text-gray-50']
     const nav = navLists.join(' ')
