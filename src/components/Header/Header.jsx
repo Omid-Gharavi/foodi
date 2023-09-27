@@ -32,8 +32,8 @@ const Header = () => {
 
     return (
         <>
-            <div className='relative h-[81px]'>
-                <div className='pt-10 fixed top-0 left-0 right-0 xl:px-[154px] px-4 flex items-center justify-between mx-auto bg-white'>
+            <div className='relative lg:h-[102px] h-[81px]'>
+                <div className='pt-10 top-0 left-0 right-0 xl:px-[154px] px-4 flex items-center justify-between mx-auto bg-white'>
                     <Image src={Logo} alt='Logo' />
                     <ul className='flex gap-[60px] text-[20px] max-[1054px]:hidden'>
                         <li className='py-4'>
@@ -42,7 +42,7 @@ const Header = () => {
                         <li className='flex py-4 gap-[13px] link relative dropdown'>
                             Menu
                             <Image className='arrow' src={Arrow} alt='arrow' />
-                            <div className='absolute w-40 shadow-xl left-0 rounded-lg menu overflow-hidden'>
+                            <div className='absolute w-40 shadow-xl left-0 rounded-lg menu overflow-hidden bg-slate-50'>
                                 <ul className='flex flex-col '>
                                     <li className={`${nav}  pt-3 pb-4`}>Hamburger</li>
                                     <hr />
@@ -55,7 +55,7 @@ const Header = () => {
                         <li className='flex py-4 gap-[13px] link relative dropdown'>
                             Services
                             <Image className='arrow' src={Arrow} alt='arrow' />
-                            <div className='absolute w-40 shadow-xl left-0 rounded-lg menu overflow-hidden'>
+                            <div className='absolute w-40 shadow-xl left-0 rounded-lg menu overflow-hidden bg-slate-50'>
                                 <ul className='flex flex-col '>
                                     <li className={`${nav}  pt-3 pb-4`}>Order</li>
                                     <hr />
@@ -73,7 +73,7 @@ const Header = () => {
                             <Image src={Product} alt='product' />
                             <div className='absolute bg-[#39DB4A] text-gray-50 text-[14px] w-5 h-5 rounded-full flex justify-center items-center top-[-6px] right-[-9px]'>0</div>
                         </div>
-                        <div className='max-[1054px]:hidden flex justify-center items-center gap-[14px] text-gray-50 w-[180px] h-[60px] bg-[#39DB4A] rounded-[40px] ml-[43px]' aria-label='Contact'>
+                        <div className='max-[1054px]:hidden cursor-pointer flex justify-center items-center gap-[14px] text-gray-50 w-[180px] h-[60px] bg-[#39DB4A] rounded-[40px] ml-[43px]' aria-label='Contact'>
                             <Image src={Contact} alt='Contact' />
                             Contact
                         </div>
@@ -85,7 +85,7 @@ const Header = () => {
                     </div>
                 </div >
 
-                <div className={`fixed inset-0 z-20 testBg ${toggle ? 'opacity-100 visible' : 'opacity-0 invisible'}`} onClick={() => setToggle(false)}></div>
+                <div className={`lg:hidden fixed inset-0 z-20 testBg ${toggle ? 'opacity-100 visible' : 'opacity-0 invisible'}`} onClick={() => setToggle(false)}></div>
 
                 <dash.Provider value={toggle}>
                     <Dashboard />

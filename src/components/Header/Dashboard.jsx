@@ -39,9 +39,9 @@ const Lists = ({ menu, setMenu, name, index, Dashboard }) => {
 
     return (
         <>
-            <div className={`${index !== 0 && 'mt-4'} mb-3`}>
-                <p className={`text-[1.2rem] rounded-md ${menu ? 'bg-[#39DB4A] pl-2 text-gray-50' : ''} transition-all duration-[0.5s] ease-in-out`} onClick={() => setMenu(!menu)}>{name}</p>
-                <div className={`grid ${menu ? 'grid-rows-[1fr] pt-2' : 'grid-rows-[0fr] pt-0'} transition-all duration-[0.5s] ease-in-out`}>
+            <div className={`${index !== 0 && 'mt-4'} mb-1`}>
+                <p className={`text-[1.2rem] rounded-md h-9 flex items-center ${menu ? 'bg-[#39DB4A] pl-2 text-gray-50' : ''} transition-all duration-[0.5s] ease-in-out`} onClick={() => setMenu(!menu)}>{name}</p>
+                <div className={`grid ${menu ? 'grid-rows-[1fr] pt-2' : 'grid-rows-[0fr] pt-0'} ${Dashboard ? '' : 'delay-150'} transition-all duration-[0.5s] ease-in-out`}>
                     <ul className='overflow-hidden flex flex-col gap-4'>
                         <li className='pl-2'>Hamburger</li>
                         <li className='pl-2'>Hot Dog</li>
