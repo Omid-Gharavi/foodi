@@ -38,8 +38,8 @@ const Categories = () => {
             <p className='text-center mt-7 font-bold text-[40px] max-[1500px]:text-[30px]'>Popular Catagories</p>
             <div className='mt-20 flex flex-wrap gap-[38px] justify-center'>
                 {
-                    data.map(data => (
-                        <Lists image={data.image} title={data.title} text={data.text} bg={data.bg} />
+                    data.map((data, index) => (
+                        <Lists key={index + 1} image={data.image} title={data.title} text={data.text} bg={data.bg} />
                     ))
                 }
             </div>
@@ -51,7 +51,7 @@ const Lists = ({ image, title, text, bg = '#C1F1C6' }) => {
     return (
         <div className='shadow-2xl w-[226px] h-[226px] rounded-[40px] flex flex-col items-center'>
             <div className={`mt-[20px] w-[100px] h-[100px] rounded-full bg-[${bg}] flex justify-center items-center`}>
-                <Image src={image} />
+                <Image src={image} alt='foodi' />
             </div>
             <p className='mt-3 text-[20px] font-bold'>{title}</p>
             <p className='mt-3 font-medium text-[#555555]'>{text}</p>
