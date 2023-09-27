@@ -14,12 +14,12 @@ const Resturant = () => {
                     <Button />
                     <p className='ml-9 font-semibold text-[1rem] text-[#4D4D4D]  max-[1500px]:ml-0'>Watch Video</p>
                     <div className='w-16 h-16 rounded-full shadow-xl ml-[30px] flex justify-center items-center  max-[1500px]:ml-0'>
-                        <Image src={play} />
+                        <Image src={play} alt='play' />
                     </div>
                 </div>
             </div>
             <div>
-                <Image src={right} />
+                <Image src={right} alt='right' />
             </div>
         </div>
     )

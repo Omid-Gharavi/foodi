@@ -20,7 +20,7 @@ const Dashboard = () => {
 
     return (
         <div className={`lg:hidden z-30 transition ease-in-out duration-[0.5s] fixed w-52 top-0 left-0 h-screen px-4 pt-10 bg-white shadow-md ${!Dashboard ? 'translate-x-[-208px]' : 'translate-x-0'}`}>
-            <Image src={Logo} />
+            <Image src={Logo} alt='Logo' />
             <div className='mt-6'>
                 <Lists menu={menu} setMenu={setMenu} name={'Menu'} index={0} Dashboard={Dashboard} />
                 {/* <Lists menu={menu} setMenu={setMenu} name={'Services'} Dashboard={Dashboard} /> */}
