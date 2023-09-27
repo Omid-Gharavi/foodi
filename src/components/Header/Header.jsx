@@ -33,7 +33,7 @@ const Header = () => {
     return (
         <>
             <div className='relative lg:h-[102px] h-[81px]'>
-                <div className='pt-10 top-0 left-0 right-0 xl:px-[154px] px-4 flex items-center justify-between mx-auto bg-white'>
+                <div className='fixed py-10 shadow-lg top-0 left-0 right-0 xl:px-[154px] px-4 flex items-center justify-between mx-auto bg-white'>
                     <Image src={Logo} alt='Logo' />
                     <ul className='flex gap-[60px] text-[20px] max-[1054px]:hidden'>
                         <li className='py-4'>
