@@ -54,7 +54,7 @@ const Categories = () => {
 const Lists = ({ image, title, text, bg = 'bg-[#C1F1C6]' }) => {
     return (
         <div className='shadow-2xl w-[226px] h-[226px] rounded-[40px] flex flex-col items-center'>
-            <div className={`mt-[20px] w-[100px] h-[100px] rounded-full ${bg} flex justify-center items-center`}>
+            <div className={`mt-[20px] w-[100px] h-[100px] rounded-full ${bg} flex items-center`}>
                 <Image src={image} />
             </div>
             <p className='mt-3 text-[20px] font-bold'>{title}</p>

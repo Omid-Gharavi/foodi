@@ -63,3 +63,23 @@ body {
   background: rgba(0, 0, 0, 0.5);
   transition: .3s ease;
 }
+
+.swiper{
+  overflow: hidden;
+  padding-bottom: 2rem !important;
+  padding-inline: .8rem !important;
+}
+
+.swiper-wrapper{
+  display: flex !important;
+}
+
+.swiper-slide{
+  display: flex !important;
+  justify-content: center;
+}
+
+.swiper-button-disabled{
+  background-color: #EFEFEF;
+  transition: .2s ease-in-out;
+}
