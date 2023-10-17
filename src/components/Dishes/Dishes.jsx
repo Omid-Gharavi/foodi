@@ -6,7 +6,7 @@ import fattoush from '@/assets/images/Dishes/fattoush.svg'
 import salad from '@/assets/images/Dishes/salad.svg'
 import egg from '@/assets/images/Dishes/egg.svg'
 import start from '@/assets/start.svg'
-import { useSwiper, Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/css/navigation"
 import { Navigation } from "swiper";
 
@@ -52,10 +52,10 @@ const Dishes = () => {
             <div className='flex justify-between max-xl:flex-col max-xl:items-center max-xl:gap-16'>
                 <p className='text-[50px] leading-[131%] font-bold mt-10 max-lg:text-[30px]'>Standout Dishes<br /> From Our Menu</p>
                 <div className='xl:self-end flex gap-[50px] max-xl:gap-8'>
-                    <button className='w-20 h-20 rounded-full bg-[#39DB4A] flex justify-center items-center cursor-pointer transition-all ease-in-out duration-[.2s]' id='left'>
+                    <button aria-label='left' className='w-20 h-20 rounded-full bg-[#39DB4A] flex justify-center items-center cursor-pointer transition-all ease-in-out duration-[.2s]' id='left'>
                         <Image className='rotate-180' src={ArrowRight} alt='left' />
                     </button>
-                    <button className='w-20 h-20 rounded-full bg-[#39DB4A] flex justify-center items-center cursor-pointer transition-all ease-in-out duration-[.2s]' id='right'>
+                    <button aria-label='right' className='w-20 h-20 rounded-full bg-[#39DB4A] flex justify-center items-center cursor-pointer transition-all ease-in-out duration-[.2s]' id='right'>
                         <Image src={ArrowRight} alt='right' />
                     </button>
                 </div>
@@ -72,11 +72,11 @@ const Dishes = () => {
                     }}
                 >
                     {
-                        dish.map(dish => (
-                            <SwiperSlide>
+                        dish.map((dish, index) => (
+                            <SwiperSlide key={index + 1}>
                                 <div className='relative w-[346px] bg-slate-50 shadow-xl h-[423px] rounded-[40px] flex justify-center overflow-hidden'>
                                     <div className='mt-6 flex flex-col'>
-                                        <Image className='mt-1 h-[14rem] select-none' src={dish.image} />
+                                        <Image className='mt-1 h-[14rem] select-none' src={dish.image} alt='dish' />
                                         <div>
                                             <p className='mt-[14px] font-semibold text-[20px] select-none'>{dish.name}</p>
                                             <p className='mt-2 text-[#555555] text-[1rem] font-semibold select-none'>Description of the item</p>
@@ -85,7 +85,7 @@ const Dishes = () => {
                                                     <span className='text-[#FF6868]'>$</span><p>{dish.price}</p>
                                                 </div>
                                                 <div className='flex items-center'>
-                                                    <Image src={start} className='h-4' />
+                                                    <Image src={start} className='h-4' alt='star' />
                                                     <span className='select-none'>4.6</span>
                                                 </div>
                                             </div>
