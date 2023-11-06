@@ -16,30 +16,19 @@ const Header = () => {
 
     const [toggle, setToggle] = useState(false);
 
-    useEffect(() => {
-        // Load the initial menu toggle state from cache
-        const cachedToggleState = localStorage.getItem('toggleState');
-        setToggle(cachedToggleState === 'true');
-    }, []);
-
-    useEffect(() => {
-        // Update the cache whenever the menu toggle state changes
-        localStorage.setItem('toggleState', toggle.toString());
-    }, [toggle]);
-
     const navLists = ['pl-5', 'hover:bg-[#39DB4A]', 'hover:text-gray-50']
     const nav = navLists.join(' ')
 
     return (
         <>
             <div className='relative lg:h-[102px] h-[81px]'>
-                <div className='fixed z-30 py-10 shadow-lg top-0 left-0 right-0 xl:px-[154px] px-4 flex items-center justify-between mx-auto bg-white'>
+                <div className='fixed z-30 py-5 shadow-lg top-0 left-0 right-0 xl:px-[154px] px-4 flex items-center justify-between mx-auto bg-white'>
                     <Image src={Logo} alt='Logo' />
                     <ul className='flex gap-[60px] text-[20px] max-[1054px]:hidden'>
-                        <li className='py-4'>
+                        <li className='py-6'>
                             <Link href={'/'} className={router.pathname === '/' ? 'text-[#39DB4A]' : ''}>Home</Link>
                         </li>
-                        <li className='flex py-4 gap-[13px] link relative dropdown'>
+                        <li className='flex py-6 gap-[13px] link relative dropdown'>
                             Menu
                             <Image className='arrow' src={Arrow} alt='arrow' />
                             <div className='absolute w-40 shadow-xl left-0 rounded-lg menu overflow-hidden bg-slate-50'>
@@ -52,7 +41,7 @@ const Header = () => {
                                 </ul>
                             </div>
                         </li>
-                        <li className='flex py-4 gap-[13px] link relative dropdown'>
+                        <li className='flex py-6 gap-[13px] link relative dropdown'>
                             Services
                             <Image className='arrow' src={Arrow} alt='arrow' />
                             <div className='absolute w-40 shadow-xl left-0 rounded-lg menu overflow-hidden bg-slate-50'>
@@ -63,7 +52,7 @@ const Header = () => {
                                 </ul>
                             </div>
                         </li>
-                        <li className='py-4'>
+                        <li className='py-6'>
                             <Link href={'/offers'} className={router.pathname === '/offers' ? 'text-[#39DB4A]' : ''}>Offers</Link>
                         </li>
                     </ul>
