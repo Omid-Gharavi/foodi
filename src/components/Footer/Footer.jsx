@@ -25,14 +25,14 @@ const Footer = () => {
 
     return (
         <div className='mt-60 mb-8'>
-            <div className='flex justify-center flex-wrap gap-[184px]'>
-                <div>
-                    <Image src={logo} />
-                    <p className='w-[170px] mt-[37px] text-[#555555]'>
+            <div className='flex max-md:flex-col justify-center flex-wrap gap-[184px] max-md:gap-20'>
+                <div className='flex flex-col max-md:items-center'>
+                    <Image src={logo} alt='logo' />
+                    <p className='w-[170px] mt-[37px] text-[#555555] max-md:text-center'>
                         Savor the artistry where every dish is a culinary masterpiece
                     </p>
                 </div>
-                <div className='mt-[12px] flex flex-wrap items-center justify-center gap-48'>
+                <div className='mt-[12px] flex max-md:flex-col flex-wrap items-center justify-center gap-48 max-lg:gap-20'>
 
                     <div>
                         <p className='font-semibold'>Useful links</p>
@@ -68,8 +68,8 @@ const Footer = () => {
             <div className='flex items-center flex-wrap gap-[170px] mt-[100px] mx-[155px] max-md:justify-center max-lg:mx-[85px]'>
                 <div className='flex flex-wrap gap-5 max-md:justify-center'>
                     {
-                        icons.map(icon => (
-                            <Icon image={icon.image} invert={icon.invert} />
+                        icons.map((icon, index) => (
+                            <Icon key={index + 1} image={icon.image} invert={icon.invert} />
                         ))
                     }
                 </div>

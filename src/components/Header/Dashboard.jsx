@@ -7,17 +7,6 @@ const Dashboard = () => {
     const Dashboard = useContext(dash)
     const [menu, setMenu] = useState(false);
 
-    useEffect(() => {
-        // Load the initial menu state from cache
-        const cachedMenuState = localStorage.getItem('menuState');
-        setMenu(cachedMenuState === 'true');
-    }, []);
-
-    useEffect(() => {
-        // Update the cache whenever the menu state changes
-        localStorage.setItem('menuState', menu.toString());
-    }, [menu]);
-
     return (
         <div className={`lg:hidden z-30 transition ease-in-out duration-[0.5s] fixed w-52 top-0 left-0 h-screen px-4 pt-10 bg-white shadow-md ${!Dashboard ? 'translate-x-[-208px]' : 'translate-x-0'}`}>
             <Image src={Logo} alt='Logo' />
@@ -35,7 +24,7 @@ const Lists = ({ menu, setMenu, name, index, Dashboard }) => {
             setMenu(false)
         }
         console.log(Dashboard)
-    }, [Dashboard])
+    }, [Dashboard, setMenu])
 
     return (
         <>

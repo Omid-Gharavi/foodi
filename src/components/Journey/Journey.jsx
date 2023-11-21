@@ -54,7 +54,7 @@ const Journey = () => {
 const Lists = ({ image, title, text }) => {
     return (
         <div className='w-[277px] h-[290px] shadow-xl flex flex-col items-center rounded-3xl text-center'>
-            <Image className='mt-11' src={image} />
+            <Image className='mt-11' src={image} alt='journey' />
             <p className='uppercase text-[#5FE26C] font-bold mt-6 text-[24px]'>{title}</p>
             <p className='w-[232px] text-[20px] mt-4 font-semibold text-[#90BD95]'>{text}</p>
         </div>
