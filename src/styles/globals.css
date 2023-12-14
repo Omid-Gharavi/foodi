@@ -65,7 +65,9 @@ body {
 }
 
 .swiper{
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
+  /* contain: paint; */
   padding-bottom: 2rem !important;
   padding-inline: .8rem !important;
 }
