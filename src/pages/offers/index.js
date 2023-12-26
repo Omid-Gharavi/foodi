@@ -1,7 +1,9 @@
+import Offer from "@/components/offers/Offer";
+
 export default function Offers() {
     return (
         <div>
-            <h1>Offers</h1>
+            <Offer />
         </div>
     )
 }
